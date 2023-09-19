@@ -1,3 +1,17 @@
-import {banco} from 'conexao.js'
-var livroSchema=banco.Schema:{id:banco.Schema.Types.Objectld;titulo:String;codEditora:Number;resumo:String;autores:[string]}
-export default livro
+const mongoose = require('./conexao'); 
+
+
+const LivroSchema = new mongoose.Schema({
+  titulo: {
+    type: String,
+    required: true,
+  },
+  autor: String,
+  anoPublicacao: Number,
+
+});
+
+
+const Livro = mongoose.model('livros', LivroSchema);
+
+module.exports = Livro; 
